@@ -477,6 +477,13 @@ struct audio_hw_device {
      */
     int (*get_master_volume)(struct audio_hw_device *dev, float *volume);
 
+#if defined(HTC_TEGRA_AUDIO) 
+    /**
+     * Unknown function that is NULL anyway. HTC what are you doing?
+     */
+    void (*unknown_func)(void);
+#endif
+
     /**
      * set_mode is called when the audio mode changes. AUDIO_MODE_NORMAL mode
      * is for standard audio playback, AUDIO_MODE_RINGTONE when a ringtone is
